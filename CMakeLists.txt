@@ -33,7 +33,10 @@ FetchContent_MakeAvailable(Catch2)
 #main
 add_executable(work_shooting_simulator main.cpp
         simulator/simulate.hpp
+        simulator/simulate.hpp
+        simulator/entt_components.hpp
         simulator/simulate.cpp
 )
 
 target_include_directories(work_shooting_simulator PRIVATE ${glm_SOURCE_DIR})
+target_link_libraries(work_shooting_simulator PRIVATE EnTT)
