@@ -36,7 +36,10 @@ add_executable(work_shooting_simulator main.cpp
         simulator/simulate.hpp
         simulator/entt_components.hpp
         simulator/simulate.cpp
+        tests/test_simulation.cpp
 )
 
+#add glm
 target_include_directories(work_shooting_simulator PRIVATE ${glm_SOURCE_DIR})
+#add entt
 target_link_libraries(work_shooting_simulator PRIVATE EnTT)

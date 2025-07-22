@@ -62,16 +62,16 @@ std::vector<float> Simulation::runAll() //simulate
                 vel += acc * dt; //calc new velocity
                 pos += vel * dt; //calc new position
 
-                if (pos.y < 0.f) //if we hit the ground, end
-                    break;
-
-                if (glm::distance(pos, target) <= 1.f) //we can make some tolerancy (based on size of target which is not implemented)
+                if (glm::distance(pos, target) <= 1.5f) //tolerancy because the target has some size, 1 precise point would be almost impossible to hit
                 {
                     std::cout << "DEBUG: distance: " << glm::distance(pos, target) << std::endl;
                     results.push_back(glm::degrees(angle)); //we hit, so save result and break for next entity
                     hit = true;
                     break;
                 }
+
+                if (pos.y < 0.f) //if we hit the ground, end
+                    break;
             }
 
             if (hit) //we just hit, break the second loop to move for next entity

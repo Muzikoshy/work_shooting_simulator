@@ -9,7 +9,7 @@ int main()
     sim.addShot({0, 0, 0}, {200, 50, 0}, 250.0f, 0.02f, 0.01f);
     sim.addShot({0, 0, 0}, {300, 100, 0}, 100.0f, 0.01f, 0.01f);
     sim.addShot({0, 0, 0}, {100, 5, 0}, 250.0f, 0.02f, 0.01f);
-    sim.addShot({0, 0, 0}, {1, 0, 0}, 250.0f, 0.02f, 0.01f); //TODO fix calc logic (returning miss when target is 1m away)
+    sim.addShot({0, 0, 0}, {1, 0, 0}, 250.0f, 0.02f, 0.01f);
 
 
     auto angles = sim.runAll();
